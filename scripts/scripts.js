@@ -21,16 +21,21 @@ function buildHeroBlock(main) {
   const h1 = main.querySelector('h1');
   const h2 = main.querySelector('h2');
   const picture = main.querySelector('picture');
-  // eslint-disable-next-line no-bitwise
-// Update the buildHeroBlock function
-if (h1 && h2 && picture && (h1.compareDocumentPosition(picture) & Node.DOCUMENT_POSITION_PRECEDING)) {
-  const section = document.createElement('div');
-  const textContainer = document.createElement('div');
-  textContainer.classList.add('hero-text');
-  textContainer.append(h1, h2);
-  section.append(buildBlock('hero', { elems: [picture, textContainer] }));
-  main.prepend(section);
-}
+
+  // Update the buildHeroBlock function
+  if (
+    h1 &&
+    h2 &&
+    picture &&
+    h1.compareDocumentPosition(picture) === Node.DOCUMENT_POSITION_PRECEDING
+  ) {
+    const section = document.createElement('div');
+    const textContainer = document.createElement('div');
+    textContainer.classList.add('hero-text');
+    textContainer.append(h1, h2);
+    section.append(buildBlock('hero', { elems: [picture, textContainer] }));
+    main.prepend(section);
+  }
 }
 
 /**
