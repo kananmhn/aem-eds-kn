@@ -24,10 +24,10 @@ function buildHeroBlock(main) {
 
   // Update the buildHeroBlock function
   if (
-    h1 &&
-    h2 &&
-    picture &&
-    h1.compareDocumentPosition(picture) === Node.DOCUMENT_POSITION_PRECEDING
+    h1
+    && h2
+    && picture
+    && h1.compareDocumentPosition(picture) === Node.DOCUMENT_POSITION_PRECEDING
   ) {
     const section = document.createElement('div');
     const textContainer = document.createElement('div');
