@@ -1,33 +1,47 @@
+.columns-wrapper {
+  position: relative;
+}
+
 .columns > div {
-  display: flex;
-  flex-direction: column;
+  position: relative;
 }
 
-.columns img {
+.columns > div > .h3-display-topleft {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: black;
+  color: white;
+  padding: 8px 16px;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.columns > div > p picture img {
   width: 100%;
-}
-
-.columns > div > div {
-  order: 1;
-}
-
-.columns > div > .columns-img-col {
-  order: 0;
-}
-
-.columns > div > .columns-img-col img {
+  height: auto;
   display: block;
+  border-radius: 8px; /* Optional: Add rounded corners */
 }
 
-@media (width >= 900px) {
+@media (min-width: 900px) {
   .columns > div {
+    display: flex;
+    flex-direction: row;
     align-items: center;
-    flex-direction: unset;
     gap: 24px;
   }
+}
+.h2-project{
+  position: relative;
+}
 
-  .columns > div > div {
-    flex: 1;
-    order: unset;
-  }
+.h2-project h4{
+  position: absolute;
+  color: #fff !important;
+  background-color: #000 !important;
+  padding: 0px 16px !important;
+  left: 0;
+  top: 0;
+  font-size: 1.5rem;
 }
